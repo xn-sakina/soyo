@@ -1,6 +1,6 @@
 {
   "name": "soyo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Publish package in the dist directory for clean outputs",
   "bin": {
     "soyo": "bin/soyo.js"
