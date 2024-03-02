@@ -1,0 +1,53 @@
+{
+  "name": "soyo",
+  "version": "1.0.2",
+  "description": "Publish package in the dist directory for clean outputs",
+  "bin": {
+    "soyo": "bin/soyo.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "fz6m",
+  "homepage": "https://github.com/xn-sakina/soyo#README",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xn-sakina/soyo"
+  },
+  "keywords": [
+    "npm",
+    "publish",
+    "npm-publish",
+    "dist-publish",
+    "dist-package",
+    "npm-dist-publish"
+  ],
+  "files": [
+    "dist",
+    "compiled",
+    "types"
+  ],
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "build:deps": "dora build",
+    "push": "soyo build && cd ./dist && npm publish --registry https://registry.npmjs.com/"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.11.24",
+    "@xn-sakina/dora": "^1.1.1",
+    "@xn-sakina/mental": "^4.2.1",
+    "chalk": "^5.3.0",
+    "execa": "^8.0.1",
+    "sort-package-json": "^2.8.0",
+    "soyo": "link:./",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@8.15.2",
+  "license": "MIT"
+}
