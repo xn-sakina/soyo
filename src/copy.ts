@@ -68,6 +68,9 @@ interface IPkgJson {
   napi?: Record<string, any>
   os?: string[]
   cpu?: string[]
+  typesVersions?: Record<string, any>
+  type?: string
+  sideEffects?: boolean | string[]
 
   // import alias
   imports?: string
@@ -126,6 +129,9 @@ enum EField {
   imports = 'imports',
   os = 'os',
   cpu = 'cpu',
+  typesVersions = 'typesVersions',
+  type = 'type',
+  sideEffects = 'sideEffects',
 }
 
 interface ISoyoConfig {
@@ -314,6 +320,12 @@ export const copy = async (opts: IContext) => {
     // for binary package
     EField.os,
     EField.cpu,
+    // typesVersions
+    EField.typesVersions,
+    // type
+    EField.type,
+    // sideEffects
+    EField.sideEffects,
   ]
   setField(OTHER_COPY_FIELDS)
 
